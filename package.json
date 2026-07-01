@@ -1,0 +1,29 @@
+{
+  "name": "manager",
+  "version": "1.0.0",
+  "description": "Administración de Trabajo: ProjectManager y TestManager",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "jest tests/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luisenriquevloutlook/manager.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/luisenriquevloutlook/manager/issues"
+  },
+  "homepage": "https://github.com/luisenriquevloutlook/manager#readme",
+  "dependencies": {
+    "express": "^5.2.1",
+    "express-rate-limit": "^8.5.2"
+  },
+  "devDependencies": {
+    "jest": "^30.4.2",
+    "supertest": "^7.2.2"
+  }
+}

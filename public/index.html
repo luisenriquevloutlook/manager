@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Manager — Administración de Trabajo</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f0f2f5; color: #333; }
+
+    header {
+      background: #1a73e8;
+      color: #fff;
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    header h1 { font-size: 1.4rem; }
+    nav { display: flex; gap: 0.5rem; margin-left: auto; }
+    nav button {
+      background: rgba(255,255,255,0.2);
+      border: none;
+      color: #fff;
+      padding: 0.4rem 1rem;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      transition: background 0.2s;
+    }
+    nav button:hover, nav button.active { background: rgba(255,255,255,0.4); }
+
+    main { max-width: 1100px; margin: 2rem auto; padding: 0 1rem; }
+
+    .section { display: none; }
+    .section.active { display: block; }
+
+    .card {
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 1px 4px rgba(0,0,0,.12);
+      padding: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .card h2 { font-size: 1.1rem; margin-bottom: 1rem; color: #1a73e8; }
+
+    form { display: flex; flex-wrap: wrap; gap: 0.75rem; align-items: flex-end; }
+    form label { font-size: 0.85rem; font-weight: 600; display: block; margin-bottom: 2px; }
+    form input, form textarea, form select {
+      padding: 0.45rem 0.7rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 0.9rem;
+      width: 100%;
+    }
+    form .field { flex: 1 1 180px; }
+    form .field.wide { flex: 2 1 320px; }
+    form button[type=submit] {
+      background: #1a73e8;
+      color: #fff;
+      border: none;
+      padding: 0.5rem 1.4rem;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      align-self: flex-end;
+      white-space: nowrap;
+    }
+    form button[type=submit]:hover { background: #1558b0; }
+
+    table { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
+    th { background: #f8f9fa; text-align: left; padding: 0.6rem 0.75rem; border-bottom: 2px solid #dee2e6; }
+    td { padding: 0.55rem 0.75rem; border-bottom: 1px solid #eee; vertical-align: top; }
+    tr:hover td { background: #f8f9fa; }
+
+    .badge {
+      display: inline-block;
+      padding: 0.2rem 0.55rem;
+      border-radius: 12px;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+    .badge-active, .badge-in_progress { background: #d4edda; color: #155724; }
+    .badge-pending { background: #fff3cd; color: #856404; }
+    .badge-completed, .badge-passed { background: #cce5ff; color: #004085; }
+    .badge-archived, .badge-cancelled, .badge-failed { background: #f8d7da; color: #721c24; }
+    .badge-blocked { background: #e2e3e5; color: #383d41; }
+    .badge-low { background: #e2e3e5; color: #383d41; }
+    .badge-medium { background: #fff3cd; color: #856404; }
+    .badge-high { background: #f8d7da; color: #721c24; }
+
+    .actions button {
+      background: none;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      padding: 0.2rem 0.6rem;
+      cursor: pointer;
+      font-size: 0.8rem;
+      margin-right: 4px;
+      transition: background 0.15s;
+    }
+    .actions button:hover { background: #f0f2f5; }
+    .actions button.danger { border-color: #dc3545; color: #dc3545; }
+    .actions button.danger:hover { background: #f8d7da; }
+
+    .project-link { color: #1a73e8; cursor: pointer; text-decoration: underline; }
+
+    .breadcrumb {
+      font-size: 0.85rem;
+      margin-bottom: 1rem;
+      color: #666;
+    }
+    .breadcrumb span { cursor: pointer; color: #1a73e8; }
+    .breadcrumb span:hover { text-decoration: underline; }
+
+    .empty { text-align: center; color: #999; padding: 2rem 0; font-size: 0.9rem; }
+
+    .toast {
+      position: fixed;
+      bottom: 1.5rem;
+      right: 1.5rem;
+      background: #323232;
+      color: #fff;
+      padding: 0.7rem 1.2rem;
+      border-radius: 6px;
+      font-size: 0.88rem;
+      opacity: 0;
+      transition: opacity 0.3s;
+      pointer-events: none;
+      z-index: 1000;
+    }
+    .toast.show { opacity: 1; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>⚙️ Manager</h1>
+  <nav>
+    <button id="nav-projects" class="active" onclick="showSection('projects')">📁 Proyectos</button>
+    <button id="nav-tasks" onclick="showSection('tasks')">✅ Tareas</button>
+    <button id="nav-tests" onclick="showSection('tests')">🧪 TestManager</button>
+  </nav>
+</header>
+
+<main>
+  <!-- ── PROJECTS ─────────────────────────────────────────────── -->
+  <section id="section-projects" class="section active">
+    <div class="card">
+      <h2>Nuevo Proyecto</h2>
+      <form id="form-project">
+        <div class="field wide">
+          <label>Nombre *</label>
+          <input id="proj-name" type="text" placeholder="Nombre del proyecto" required />
+        </div>
+        <div class="field wide">
+          <label>Descripción</label>
+          <input id="proj-desc" type="text" placeholder="Descripción (opcional)" />
+        </div>
+        <button type="submit">+ Crear</button>
+      </form>
+    </div>
+    <div class="card">
+      <h2>Proyectos</h2>
+      <table id="tbl-projects">
+        <thead><tr><th>Nombre</th><th>Descripción</th><th>Estado</th><th>Creado</th><th>Acciones</th></tr></thead>
+        <tbody id="tbody-projects"></tbody>
+      </table>
+      <p class="empty" id="empty-projects" style="display:none">No hay proyectos. Crea uno arriba.</p>
+    </div>
+  </section>
+
+  <!-- ── TASKS ─────────────────────────────────────────────────── -->
+  <section id="section-tasks" class="section">
+    <div class="breadcrumb" id="tasks-breadcrumb"></div>
+    <div class="card">
+      <h2>Nueva Tarea</h2>
+      <form id="form-task">
+        <div class="field">
+          <label>Proyecto *</label>
+          <select id="task-project" required></select>
+        </div>
+        <div class="field wide">
+          <label>Título *</label>
+          <input id="task-title" type="text" placeholder="Título de la tarea" required />
+        </div>
+        <div class="field wide">
+          <label>Descripción</label>
+          <input id="task-desc" type="text" placeholder="Descripción" />
+        </div>
+        <div class="field">
+          <label>Prioridad</label>
+          <select id="task-priority">
+            <option value="low">Baja</option>
+            <option value="medium" selected>Media</option>
+            <option value="high">Alta</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>Asignado a</label>
+          <input id="task-assigned" type="text" placeholder="Nombre (opcional)" />
+        </div>
+        <button type="submit">+ Crear</button>
+      </form>
+    </div>
+    <div class="card">
+      <h2>Tareas</h2>
+      <table id="tbl-tasks">
+        <thead><tr><th>Título</th><th>Proyecto</th><th>Prioridad</th><th>Estado</th><th>Asignado a</th><th>Acciones</th></tr></thead>
+        <tbody id="tbody-tasks"></tbody>
+      </table>
+      <p class="empty" id="empty-tasks" style="display:none">No hay tareas. Crea una arriba.</p>
+    </div>
+  </section>
+
+  <!-- ── TEST MANAGER ──────────────────────────────────────────── -->
+  <section id="section-tests" class="section">
+    <div class="breadcrumb" id="tests-breadcrumb"></div>
+    <div class="card">
+      <h2>Nuevo Caso de Prueba</h2>
+      <form id="form-testcase">
+        <div class="field">
+          <label>Proyecto *</label>
+          <select id="tc-project" required></select>
+        </div>
+        <div class="field wide">
+          <label>Título *</label>
+          <input id="tc-title" type="text" placeholder="Título del caso de prueba" required />
+        </div>
+        <div class="field wide">
+          <label>Descripción</label>
+          <input id="tc-desc" type="text" placeholder="Descripción" />
+        </div>
+        <div class="field wide">
+          <label>Pasos (uno por línea)</label>
+          <textarea id="tc-steps" rows="3" placeholder="Paso 1&#10;Paso 2&#10;Paso 3"></textarea>
+        </div>
+        <div class="field wide">
+          <label>Resultado esperado</label>
+          <input id="tc-expected" type="text" placeholder="Resultado esperado" />
+        </div>
+        <button type="submit">+ Crear</button>
+      </form>
+    </div>
+    <div class="card">
+      <h2>Casos de Prueba</h2>
+      <table id="tbl-tests">
+        <thead><tr><th>Título</th><th>Proyecto</th><th>Resultado esperado</th><th>Estado</th><th>Acciones</th></tr></thead>
+        <tbody id="tbody-tests"></tbody>
+      </table>
+      <p class="empty" id="empty-tests" style="display:none">No hay casos de prueba. Crea uno arriba.</p>
+    </div>
+  </section>
+</main>
+
+<div class="toast" id="toast"></div>
+
+<script src="app.js"></script>
+</body>
+</html>
