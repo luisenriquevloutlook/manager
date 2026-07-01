@@ -1,11 +1,21 @@
 const express = require('express');
 const path = require('path');
+const rateLimit = require('express-rate-limit');
 
 const projectsRouter = require('./routes/projects');
 const tasksRouter = require('./routes/tasks');
 const testCasesRouter = require('./routes/testCases');
 
 const app = express();
+
+// Apply a general rate limiter to all requests
+const limiter = rateLimit({
+  windowMs: 15 * 60 * 1000, // 15 minutes
+  max: 300,
+  standardHeaders: true,
+  legacyHeaders: false,
+});
+app.use(limiter);
 
 app.use(express.json());
 app.use(express.static(path.join(__dirname, '..', 'public')));

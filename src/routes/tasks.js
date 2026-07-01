@@ -83,9 +83,6 @@ router.delete('/:id', (req, res) => {
   );
   if (index === -1) return res.status(404).json({ error: 'Task not found' });
 
-  const project = store.projects.find((p) => p.id === req.params.projectId);
-  if (!project) return res.status(404).json({ error: 'Project not found' });
-
   const [removed] = store.tasks.splice(index, 1);
   res.json({ message: 'Task deleted', task: removed });
 });
