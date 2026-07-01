@@ -1,3 +1,4 @@
+const { randomUUID } = require('crypto');
 
 
 /**
@@ -8,7 +9,7 @@
  */
 function createProject(name, description = '') {
   return {
-    id: crypto.randomUUID(),
+    id: randomUUID(),
     name,
     description,
     status: 'active',

@@ -1,3 +1,4 @@
+const { randomUUID } = require('crypto');
 
 
 const VALID_RESULTS = ['pending', 'passed', 'failed', 'blocked'];
@@ -13,7 +14,7 @@ const VALID_RESULTS = ['pending', 'passed', 'failed', 'blocked'];
  */
 function createTestCase(projectId, title, description = '', steps = [], expectedResult = '') {
   return {
-    id: crypto.randomUUID(),
+    id: randomUUID(),
     projectId,
     title,
     description,

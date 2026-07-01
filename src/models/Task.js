@@ -1,3 +1,4 @@
+const { randomUUID } = require('crypto');
 
 
 const VALID_STATUSES = ['pending', 'in_progress', 'completed', 'cancelled'];
@@ -16,7 +17,7 @@ function createTask(projectId, title, description = '', priority = 'medium') {
     throw new Error(`Invalid priority. Must be one of: ${VALID_PRIORITIES.join(', ')}`);
   }
   return {
-    id: crypto.randomUUID(),
+    id: randomUUID(),
     projectId,
     title,
     description,
