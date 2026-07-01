@@ -1,0 +1,328 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Color Palette - Monday.com Inspired Light Theme */
+  --primary-hsl: 224 85% 58%;
+  --primary-dark-hsl: 224 85% 48%;
+  --primary-light-hsl: 224 85% 68%;
+  
+  --success-color: #00c875;   /* Monday Done Green */
+  --warning-color: #fdab3d;   /* Monday Working Orange */
+  --error-color: #e2445c;     /* Monday Stuck Red */
+  --info-color: #579bfc;      /* Monday Blue Hito */
+  --neutral-color: #c4c4c4;   /* Monday Gray Not Started */
+  
+  --bg-primary: #f6f8fa;       /* Very light canvas background */
+  --bg-secondary: #ffffff;     /* White for cards/panels */
+  --bg-panel: #ffffff;
+  --bg-hover: #f1f5f9;
+  
+  --text-primary: #1e293b;     /* Dark slate for main text */
+  --text-secondary: #475569;   /* Medium slate for description/labels */
+  --text-muted: #94a3b8;
+  
+  --border-color: #e2e8f0;     /* Soft border gray */
+  --border-hover: #cbd5e1;
+  
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.02);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.02);
+
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  line-height: 1.6;
+  font-weight: 400;
+  
+  color-scheme: light;
+  color: var(--text-primary);
+  background-color: var(--bg-primary);
+  
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: var(--bg-primary);
+}
+
+#root {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+}
+
+a {
+  text-decoration: none;
+  color: #3b82f6;
+  transition: all 0.2s;
+}
+
+a:hover {
+  color: #2563eb;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+input, textarea, select {
+  font-family: inherit;
+  font-size: inherit;
+  background-color: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  color: var(--text-primary);
+  padding: 0.5rem 0.75rem;
+  transition: all 0.2s;
+}
+
+input:focus, textarea:focus, select:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.15);
+}
+
+/* Custom layout container */
+.page-container {
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* Monday Table Board Cards */
+.card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: var(--shadow-sm);
+}
+
+/* Custom buttons */
+.btn {
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.825rem;
+  border: 1px solid transparent;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: all 0.2s;
+}
+
+.btn-primary {
+  background: #0073ea; /* Monday Blue Primary */
+  color: white;
+}
+
+.btn-primary:hover {
+  background: #0060c5;
+  box-shadow: 0 2px 8px rgba(0, 115, 234, 0.25);
+}
+
+.btn-success {
+  background: var(--success-color);
+  color: white;
+}
+
+.btn-success:hover {
+  background: #00a15e;
+}
+
+.btn-warning {
+  background: var(--warning-color);
+  color: white;
+}
+
+.btn-warning:hover {
+  background: #e1922c;
+}
+
+.btn-error {
+  background: var(--error-color);
+  color: white;
+}
+
+.btn-error:hover {
+  background: #c23146;
+}
+
+.btn-secondary {
+  background: #ffffff;
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+}
+
+.btn-secondary:hover {
+  background: #f8fafc;
+  border-color: #cbd5e1;
+}
+
+/* Badges */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.badge-success {
+  background: rgba(0, 200, 117, 0.15);
+  color: #00a15e;
+}
+
+.badge-error {
+  background: rgba(226, 68, 92, 0.15);
+  color: #c23146;
+}
+
+.badge-warning {
+  background: rgba(253, 171, 61, 0.15);
+  color: #d97706;
+}
+
+.badge-info {
+  background: rgba(87, 155, 252, 0.15);
+  color: #2563eb;
+}
+
+.badge-neutral {
+  background: rgba(148, 163, 184, 0.15);
+  color: #475569;
+}
+
+/* Popups & Drawer Panel */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(15, 23, 42, 0.4);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 1rem;
+}
+
+.modal-content {
+  background: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: var(--shadow-lg);
+  max-width: 500px;
+  width: 100%;
+}
+
+/* Spinner Loader */
+.spinner-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+}
+
+.spinner {
+  border: 3px solid rgba(0, 0, 0, 0.05);
+  border-top-color: #0073ea;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Scrollbar styles */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Monday Table Specific Styles */
+.monday-grid-row {
+  border-bottom: 1px solid #e2e8f0;
+  height: 36px;
+}
+
+.monday-cell-status-completado {
+  background-color: var(--success-color);
+  color: white;
+}
+
+.monday-cell-status-falla-menor {
+  background-color: var(--warning-color);
+  color: white;
+}
+
+/*Modificado 24/Jun/2026 - evazquez*/
+/*.monday-cell-status-en-progreso {
+  background-color: var(--warning-color);
+  color: white;
+}*/
+
+.monday-cell-status-pendiente {
+  background-color: var(--neutral-color);
+  color: white;
+}
+
+.monday-cell-status-hito {
+  background-color: var(--info-color);
+  color: white;
+}
+
+.monday-cell-status-cancelado {
+  background-color: var(--error-color);
+  color: white;
+}

@@ -1,0 +1,48 @@
+{
+  "name": "mesago-project-manager",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Sistema de Gestión de Proyectos para MesaGo",
+  "scripts": {
+    "dev": "vite",
+    "backend": "node server.js",
+    "start-all": "concurrently \"npm run dev\" \"node server.js\"",
+    "build": "tsc -b && vite build",
+    "lint": "eslint .",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "axios": "^1.16.1",
+    "concurrently": "^10.0.3",
+    "cors": "^2.8.6",
+    "date-fns": "^3.0.0",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "mysql2": "^3.22.4",
+    "pdfkit": "^0.19.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "react-router-dom": "^7.16.0",
+    "recharts": "^3.8.1",
+    "lucide-react": "^0.475.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.1",
+    "@tailwindcss/postcss": "^4.3.0",
+    "@types/node": "^24.10.1",
+    "@types/react": "^19.2.5",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^5.1.1",
+    "autoprefixer": "^10.5.0",
+    "eslint": "^9.39.1",
+    "eslint-plugin-react-hooks": "^7.0.1",
+    "eslint-plugin-react-refresh": "^0.4.24",
+    "globals": "^16.5.0",
+    "postcss": "^8.5.15",
+    "tailwindcss": "^4.3.0",
+    "typescript": "~5.9.3",
+    "typescript-eslint": "^8.46.4",
+    "vite": "^7.2.4"
+  }
+}

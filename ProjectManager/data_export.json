@@ -1,0 +1,643 @@
+{
+  "activities": [
+    {
+      "section": "Sección",
+      "description": "Descripción",
+      "status": "Estatus",
+      "tag": "Etiqueta",
+      "original_estimated_date": "Fecha estimada original",
+      "real_date": "Fecha real",
+      "days": null,
+      "estimated_date": "Fecha estimada"
+    },
+    {
+      "section": "Planeación y Diseño",
+      "description": "Revisión de requerimientos y alcance",
+      "status": "Completado",
+      "tag": "reqs",
+      "original_estimated_date": "2025-12-15",
+      "real_date": null,
+      "days": 7,
+      "estimated_date": "2025-12-21"
+    },
+    {
+      "section": "Planeación y Diseño",
+      "description": "Diseño arquitectónico v6.0–6.2",
+      "status": "Completado",
+      "tag": "arch",
+      "original_estimated_date": "2025-12-22",
+      "real_date": "2025-12-22",
+      "days": 10,
+      "estimated_date": "2025-12-31"
+    },
+    {
+      "section": "Planeación y Diseño",
+      "description": "Diseño de BD final (local)",
+      "status": "Completado",
+      "tag": "dblocal",
+      "original_estimated_date": "2026-01-01",
+      "real_date": "2026-01-01",
+      "days": 7,
+      "estimated_date": "2026-01-07"
+    },
+    {
+      "section": "Planeación y Diseño",
+      "description": "Diseño de BD final (cloud)",
+      "status": "CANCELADO",
+      "tag": "dbcloud",
+      "original_estimated_date": "2026-01-15",
+      "real_date": null,
+      "days": 7,
+      "estimated_date": "2026-01-21"
+    },
+    {
+      "section": "Planeación y Diseño",
+      "description": "WEB Local - Alta de Establecimientos",
+      "status": "Completado",
+      "tag": "web1",
+      "original_estimated_date": "2026-01-13",
+      "real_date": null,
+      "days": 1,
+      "estimated_date": "2026-01-13"
+    },
+    {
+      "section": "Planeación y Diseño",
+      "description": "Se concluye la planeación",
+      "status": "Hito",
+      "tag": "plan",
+      "original_estimated_date": null,
+      "real_date": null,
+      "days": 0,
+      "estimated_date": "2026-04-22"
+    },
+    {
+      "section": "Front End WEB",
+      "description": "WEB Local - Login",
+      "status": "Completado",
+      "tag": "web1",
+      "original_estimated_date": "2026-01-14",
+      "real_date": "2025-05-31",
+      "days": 9,
+      "estimated_date": "2026-01-22"
+    },
+    {
+      "section": "Front End WEB",
+      "description": "WEB Local - Dashboard",
+      "status": "En Progreso",
+      "tag": "web2",
+      "original_estimated_date": null,
+      "real_date": null,
+      "days": null,
+      "estimated_date": null
+    },
+    {
+      "section": "Front End WEB",
+      "description": "WEB Local - Administración de Productos",
+      "status": null,
+      "tag": "web3",
+      "original_estimated_date": null,
+      "real_date": null,
+      "days": null,
+      "estimated_date": null
+    },
+    {
+      "section": "Front End WEB",
+      "description": "WEB Local - Administración de Categorías",
+      "status": null,
+      "tag": "web4",
+      "original_estimated_date": null,
+      "real_date": null,
+      "days": null,
+      "estimated_date": null
+    },
+    {
+      "section": "Front End WEB",
+      "description": "WEB Local - Órdenes y Mesas",
+      "status": "En Progreso",
+      "tag": "web5",
+      "original_estimated_date": "2026-01-14",
+      "real_date": null,
+      "days": 9,
+      "estimated_date": "2026-01-22"
+    },
+    {
+      "section": "Front End WEB",
+      "description": "API Local - Alta de Establecimientos",
+      "status": "Completado",
+      "tag": "api1",
+      "original_estimated_date": "2026-01-13",
+      "real_date": null,
+      "days": 1,
+      "estimated_date": "2026-01-13"
+    },
+    {
+      "section": "Backend Local",
+      "description": "API Local - Cifrado de acceso BD",
+      "status": "Completado",
+      "tag": "api2",
+      "original_estimated_date": "2026-01-14",
+      "real_date": null,
+      "days": 1,
+      "estimated_date": "2026-01-14"
+    },
+    {
+      "section": "Backend Local",
+      "description": "API Local - Consumo de Usuarios",
+      "status": "En Progreso",
+      "tag": "api3",
+      "original_estimated_date": "2026-01-14",
+      "real_date": null,
+      "days": 9,
+      "estimated_date": "2026-01-22"
+    },
+    {
+      "section": "Backend Local",
+      "description": "API Local – Órdenes y Mesas",
+      "status": "En Progreso",
+      "tag": "api4",
+      "original_estimated_date": "2026-01-14",
+      "real_date": null,
+      "days": 9,
+      "estimated_date": "2026-01-22"
+    },
+    {
+      "section": "Backend Local",
+      "description": "API Local – Inventarios y Recetas",
+      "status": "Pendiente",
+      "tag": "api5",
+      "original_estimated_date": "2026-01-12",
+      "real_date": null,
+      "days": 7,
+      "estimated_date": "2026-01-18"
+    },
+    {
+      "section": "Backend Local",
+      "description": "API Local – Reservaciones",
+      "status": "Pendiente",
+      "tag": "api6",
+      "original_estimated_date": "2026-01-19",
+      "real_date": null,
+      "days": 5,
+      "estimated_date": "2026-01-23"
+    },
+    {
+      "section": "Backend Local",
+      "description": "API Local – Solicitudes de atención (v6.1)",
+      "status": "Pendiente",
+      "tag": "api7",
+      "original_estimated_date": "2026-01-24",
+      "real_date": null,
+      "days": 4,
+      "estimated_date": "2026-01-27"
+    },
+    {
+      "section": "Backend Local",
+      "description": "API Local – Devoluciones (v6.2)",
+      "status": "Pendiente",
+      "tag": "api8",
+      "original_estimated_date": "2026-01-28",
+      "real_date": null,
+      "days": 4,
+      "estimated_date": "2026-01-31"
+    },
+    {
+      "section": "Backend Local",
+      "description": "Motor de sincronización local↔cloud",
+      "status": "Pendiente",
+      "tag": "sync",
+      "original_estimated_date": "2026-02-01",
+      "real_date": null,
+      "days": 7,
+      "estimated_date": "2026-02-07"
+    },
+    {
+      "section": "Backend Local",
+      "description": "Server - Creación del servidor Ubuntu",
+      "status": "Completado",
+      "tag": "serv1",
+      "original_estimated_date": "2026-01-14",
+      "real_date": null,
+      "days": 1,
+      "estimated_date": "2026-01-14"
+    },
+    {
+      "section": "Server Cloud",
+      "description": "Server - Creación de llave de acceso",
+      "status": "Completado",
+      "tag": "serv2",
+      "original_estimated_date": "2026-01-14",
+      "real_date": null,
+      "days": 1,
+      "estimated_date": "2026-01-14"
+    },
+    {
+      "section": "Server Cloud",
+      "description": "Server - Creación de usuario mesago",
+      "status": "Completado",
+      "tag": "serv3",
+      "original_estimated_date": "2026-01-14",
+      "real_date": null,
+      "days": 1,
+      "estimated_date": "2026-01-14"
+    },
+    {
+      "section": "Server Cloud",
+      "description": "Server - Configuración del Servidor",
+      "status": "En Progreso",
+      "tag": "serv4",
+      "original_estimated_date": "2026-01-16",
+      "real_date": null,
+      "days": 7,
+      "estimated_date": "2026-01-22"
+    },
+    {
+      "section": "Server Cloud",
+      "description": "API Cloud – Establecimientos y Mesas",
+      "status": "Pendiente",
+      "tag": "cloud1",
+      "original_estimated_date": "2026-01-10",
+      "real_date": null,
+      "days": 7,
+      "estimated_date": "2026-01-16"
+    },
+    {
+      "section": "Backend Cloud",
+      "description": "API Cloud – Inventarios",
+      "status": "CANCELADO",
+      "tag": "cloud2",
+      "original_estimated_date": "2026-01-17",
+      "real_date": null,
+      "days": 7,
+      "estimated_date": "2026-01-23"
+    },
+    {
+      "section": "Backend Cloud",
+      "description": "API Cloud – Reparto (Uber/Didi/Rappi)",
+      "status": "CANCELADO",
+      "tag": "cloud3",
+      "original_estimated_date": "2026-01-24",
+      "real_date": null,
+      "days": 7,
+      "estimated_date": "2026-01-30"
+    },
+    {
+      "section": "Backend Cloud",
+      "description": "API Cloud – Reservaciones",
+      "status": "CANCELADO",
+      "tag": "cloud4",
+      "original_estimated_date": "2026-01-31",
+      "real_date": null,
+      "days": 5,
+      "estimated_date": "2026-02-04"
+    },
+    {
+      "section": "Backend Cloud",
+      "description": "API Cloud – Reportes",
+      "status": "CANCELADO",
+      "tag": "cloud5",
+      "original_estimated_date": "2026-02-05",
+      "real_date": null,
+      "days": 5,
+      "estimated_date": "2026-02-09"
+    },
+    {
+      "section": "Backend Cloud",
+      "description": "PWA – Menú digital",
+      "status": "CANCELADO",
+      "tag": "pwa1",
+      "original_estimated_date": "2026-01-05",
+      "real_date": null,
+      "days": 7,
+      "estimated_date": "2026-01-11"
+    },
+    {
+      "section": "PWA Cliente",
+      "description": "PWA – Pedidos",
+      "status": "Pendiente",
+      "tag": "pwa2",
+      "original_estimated_date": "2026-01-12",
+      "real_date": null,
+      "days": 7,
+      "estimated_date": "2026-01-18"
+    },
+    {
+      "section": "PWA Cliente",
+      "description": "PWA – Solicitudes de atención",
+      "status": "Pendiente",
+      "tag": "pwa3",
+      "original_estimated_date": "2026-01-19",
+      "real_date": null,
+      "days": 5,
+      "estimated_date": "2026-01-23"
+    },
+    {
+      "section": "PWA Cliente",
+      "description": "PWA – Reservaciones",
+      "status": "Pendiente",
+      "tag": "pwa4",
+      "original_estimated_date": "2026-01-24",
+      "real_date": null,
+      "days": 5,
+      "estimated_date": "2026-01-28"
+    },
+    {
+      "section": "PWA Cliente",
+      "description": "PWA – Pago y cierre",
+      "status": "Pendiente",
+      "tag": "pwa5",
+      "original_estimated_date": "2026-01-29",
+      "real_date": null,
+      "days": 5,
+      "estimated_date": "2026-02-02"
+    },
+    {
+      "section": "PWA Cliente",
+      "description": "App Mesero – Órdenes",
+      "status": "Pendiente",
+      "tag": "mes1",
+      "original_estimated_date": "2026-01-10",
+      "real_date": null,
+      "days": 7,
+      "estimated_date": "2026-01-16"
+    },
+    {
+      "section": "App Mesero",
+      "description": "App Mesero – Notificaciones",
+      "status": "Pendiente",
+      "tag": "mes2",
+      "original_estimated_date": "2026-01-17",
+      "real_date": null,
+      "days": 5,
+      "estimated_date": "2026-01-21"
+    },
+    {
+      "section": "App Mesero",
+      "description": "App Mesero – Solicitudes de atención",
+      "status": "Pendiente",
+      "tag": "mes3",
+      "original_estimated_date": "2026-01-22",
+      "real_date": null,
+      "days": 4,
+      "estimated_date": "2026-01-25"
+    },
+    {
+      "section": "App Mesero",
+      "description": "App Mesero – Devoluciones",
+      "status": "Pendiente",
+      "tag": "mes4",
+      "original_estimated_date": "2026-01-26",
+      "real_date": null,
+      "days": 4,
+      "estimated_date": "2026-01-29"
+    },
+    {
+      "section": "App Mesero",
+      "description": "UI Cocina – Tiempos y estados",
+      "status": "Pendiente",
+      "tag": "cook1",
+      "original_estimated_date": "2026-01-15",
+      "real_date": null,
+      "days": 7,
+      "estimated_date": "2026-01-21"
+    },
+    {
+      "section": "Cocina/Bar",
+      "description": "UI Bar – Tiempos y estados",
+      "status": "Pendiente",
+      "tag": "bar1",
+      "original_estimated_date": "2026-01-22",
+      "real_date": null,
+      "days": 5,
+      "estimated_date": "2026-01-26"
+    },
+    {
+      "section": "Cocina/Bar",
+      "description": "Integración con apps de reparto",
+      "status": "Pendiente",
+      "tag": "rep1",
+      "original_estimated_date": "2026-01-25",
+      "real_date": null,
+      "days": 10,
+      "estimated_date": "2026-02-03"
+    },
+    {
+      "section": "Integraciones",
+      "description": "Pruebas de integración",
+      "status": "Pendiente",
+      "tag": "rep2",
+      "original_estimated_date": "2026-02-04",
+      "real_date": null,
+      "days": 5,
+      "estimated_date": "2026-02-08"
+    },
+    {
+      "section": "Integraciones",
+      "description": "Pruebas locales completas",
+      "status": "Pendiente",
+      "tag": "test1",
+      "original_estimated_date": "2026-02-01",
+      "real_date": null,
+      "days": 7,
+      "estimated_date": "2026-02-07"
+    },
+    {
+      "section": "Pruebas",
+      "description": "Pruebas en sitio con cliente real",
+      "status": "Pendiente",
+      "tag": "test2",
+      "original_estimated_date": "2026-02-08",
+      "real_date": null,
+      "days": 7,
+      "estimated_date": "2026-02-14"
+    },
+    {
+      "section": "Pruebas",
+      "description": "Ajustes finales",
+      "status": "Pendiente",
+      "tag": "fix",
+      "original_estimated_date": "2026-02-15",
+      "real_date": null,
+      "days": 5,
+      "estimated_date": "2026-02-19"
+    },
+    {
+      "section": "Pruebas",
+      "description": "Preparación de MVP",
+      "status": "Pendiente",
+      "tag": "mvp1",
+      "original_estimated_date": "2026-02-20",
+      "real_date": null,
+      "days": 3,
+      "estimated_date": "2026-02-22"
+    },
+    {
+      "section": "Lanzamiento",
+      "description": "🎯 Lanzamiento MVP MesaGo",
+      "status": "Hito",
+      "tag": "mvp2",
+      "original_estimated_date": "2026-02-23",
+      "real_date": null,
+      "days": 0,
+      "estimated_date": "2026-02-23"
+    },
+    {
+      "section": "Lanzamiento",
+      "description": null,
+      "status": null,
+      "tag": null,
+      "original_estimated_date": null,
+      "real_date": null,
+      "days": null,
+      "estimated_date": null
+    }
+  ],
+  "components": [
+    {
+      "name": "Backend API (.NET 8)",
+      "weight": 0.25,
+      "progress": 0.35
+    },
+    {
+      "name": "Panel WEB Admin",
+      "weight": 0.2,
+      "progress": 0.2
+    },
+    {
+      "name": "PWA Cliente",
+      "weight": 0.2,
+      "progress": 0.05
+    },
+    {
+      "name": "PWA Meseros",
+      "weight": 0.15,
+      "progress": 0.0
+    },
+    {
+      "name": "Pantalla Cocina",
+      "weight": 0.1,
+      "progress": 0.0
+    },
+    {
+      "name": "Backend Avanzado",
+      "weight": 0.05,
+      "progress": 0.0
+    },
+    {
+      "name": "Integraciones",
+      "weight": 0.02,
+      "progress": 0.0
+    },
+    {
+      "name": "Testing y QA",
+      "weight": 0.02,
+      "progress": 0.05
+    },
+    {
+      "name": "DevOps",
+      "weight": 0.01,
+      "progress": 0.1
+    }
+  ],
+  "mvp_priorities": [
+    {
+      "priority": "CRÍTICO",
+      "functionality": "CRUD Mesas (backend + frontend + QR)",
+      "criticity": "⭐⭐⭐",
+      "status": "❌ Pendiente"
+    },
+    {
+      "priority": "CRÍTICO",
+      "functionality": "CRUD Categorías y Productos",
+      "criticity": "⭐⭐⭐",
+      "status": "❌ Pendiente"
+    },
+    {
+      "priority": "CRÍTICO",
+      "functionality": "Sistema de Órdenes (crear, estados)",
+      "criticity": "⭐⭐⭐",
+      "status": "❌ Pendiente"
+    },
+    {
+      "priority": "CRÍTICO",
+      "functionality": "PWA Cliente básico (menú, carrito, orden)",
+      "criticity": "⭐⭐⭐",
+      "status": "❌ Pendiente"
+    },
+    {
+      "priority": "CRÍTICO",
+      "functionality": "Pantalla Cocina básica",
+      "criticity": "⭐⭐⭐",
+      "status": "❌ Pendiente"
+    },
+    {
+      "priority": "IMPORTANTE",
+      "functionality": "PWA Meseros básico",
+      "criticity": "⭐⭐",
+      "status": "❌ Pendiente"
+    },
+    {
+      "priority": "IMPORTANTE",
+      "functionality": "SignalR (tiempo real cocina)",
+      "criticity": "⭐⭐",
+      "status": "❌ Pendiente"
+    }
+  ],
+  "timeline": [
+    {
+      "date": "2025-12-15",
+      "component": "Planeación",
+      "task_description": "Revisión de requerimientos",
+      "percentage_logrado": 1.0,
+      "notes": "Inicio del proyecto"
+    },
+    {
+      "date": "2025-12-22",
+      "component": "Planeación",
+      "task_description": "Diseño arquitectónico v6.0-6.2",
+      "percentage_logrado": 1.0,
+      "notes": "Completado"
+    },
+    {
+      "date": "2026-01-01",
+      "component": "Planeación",
+      "task_description": "Diseño BD local",
+      "percentage_logrado": 1.0,
+      "notes": "Completado"
+    },
+    {
+      "date": "2026-01-13",
+      "component": "Backend",
+      "task_description": "Alta de Establecimientos",
+      "percentage_logrado": 1.0,
+      "notes": "API + WEB"
+    },
+    {
+      "date": "2026-01-14",
+      "component": "Server",
+      "task_description": "Creación servidor Ubuntu",
+      "percentage_logrado": 1.0,
+      "notes": "Infraestructura"
+    },
+    {
+      "date": "2026-01-14",
+      "component": "Backend",
+      "task_description": "Cifrado acceso BD",
+      "percentage_logrado": 1.0,
+      "notes": "Seguridad implementada"
+    },
+    {
+      "date": "2026-05-31",
+      "component": "Backend",
+      "task_description": "CRUD Roles completo",
+      "percentage_logrado": 1.0,
+      "notes": "Backend terminado"
+    },
+    {
+      "date": "2026-05-31",
+      "component": "WEB Admin",
+      "task_description": "Login + Layout",
+      "percentage_logrado": 0.6,
+      "notes": "En progreso"
+    }
+  ]
+}
